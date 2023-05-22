@@ -1,0 +1,26 @@
+<div class="wrapper">
+  <div class="left-items">
+    <p
+      class="route"
+      [routerLink]="['/']">
+      Головна
+    </p>
+    <p
+      class="route"
+      [routerLink]="['/employees']">
+      Співробітники
+    </p>
+    <p
+      class="route"
+      [routerLink]="['/blog']">
+      Новини
+    </p>
+  </div>
+  <div class="right-items">
+    <button
+      mat-fab
+      (click)="onUserProfile()">
+      <mat-icon class="user-icon">account_circle</mat-icon>
+    </button>
+  </div>
+</div>

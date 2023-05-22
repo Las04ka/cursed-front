@@ -1,0 +1,41 @@
+<div
+  *ngIf="blogData as blog; else loader"
+  class="wrapper">
+  <div class="left-items">
+    <img
+      src="{{ blog.image }}"
+      alt="Картинка блогу"
+      class="blog-image" />
+  </div>
+  <div class="right-items">
+    <div class="desc-header">
+      <p class="created">{{ blog.author }} {{ blog.createdAt | date }}</p>
+      <div class="actions">
+        <p class="title">
+          {{ blog.title }}
+        </p>
+        <button
+          *ngIf="isAdmin"
+          mat-mini-fab
+          color="primary"
+          (click)="delete()">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button
+          *ngIf="isAdmin"
+          mat-mini-fab
+          color="primary"
+          (click)="edit()">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="desc-body">
+      <span class="desc-text">{{ blog.content }}</span>
+    </div>
+  </div>
+</div>
+
+<ng-template #loader>
+  <mat-spinner></mat-spinner>
+</ng-template>

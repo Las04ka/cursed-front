@@ -1,0 +1,48 @@
+.wrapper {
+  box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.15);
+  display: flex;
+  height: 80px;
+  padding: 10px 60px;
+  align-items: center;
+  color: white;
+  background-color: #3f51b5;
+}
+
+.left-items {
+  display: flex;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 12px;
+}
+
+.mat-mdc-fab.mat-accent, .mat-mdc-mini-fab.mat-accent {
+  --mdc-fab-container-color: #fff;
+  --mat-mdc-fab-color: #3f51b5;
+}
+
+.logo {
+  width: 50px
+}
+
+.route {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.right-items {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: 20%;
+}
+
+.shopping-cart {
+  border-radius: 50px;
+}
+
+.user-icon{
+  scale: 1.5;
+}

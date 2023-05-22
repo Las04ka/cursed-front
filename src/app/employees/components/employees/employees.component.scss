@@ -1,0 +1,65 @@
+:host {
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+}
+
+.employee-card {
+  display: flex;
+  gap: 40px;
+  flex-direction: row;
+  width: 700px;
+  height: 200px;
+  padding: 10px;
+
+  .left-items {
+    display: flex;
+    width: 220px;
+    flex-shrink: 1;
+
+    img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 40px;
+    }
+  }
+
+  .right-items {
+    width: inherit;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+
+    .vertical {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .desc {
+      font-size: 16px;
+    }
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+}
+
+.backdrop {
+  background-color: rgba(0, 0, 0, 0.446);
+  position: fixed;
+  z-index: 3;
+  top: 100px;
+  margin: 0 auto;
+  width: 85%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

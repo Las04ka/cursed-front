@@ -1,0 +1,45 @@
+<button
+  *ngIf="isAdmin"
+  color="primary"
+  mat-fab
+  (click)="addEmployee()">
+  <mat-icon>add</mat-icon>
+</button>
+
+<mat-card
+  *ngFor="let employee of employees$ | async"
+  class="employee-card">
+  <div class="left-items">
+    <img
+      src="{{ employee.image }}"
+      alt="employee image" />
+  </div>
+  <div class="right-items">
+    <div class="vertical">
+      <p>
+        <b
+          >{{ employee.lastName }} {{ employee.firstName }}
+          {{ employee.patronymic }}
+        </b>
+      </p>
+      <p class="desc">
+        {{ employee.description }}
+      </p>
+    </div>
+    <div
+      *ngIf="isAdmin"
+      class="actions">
+      <button
+        color="primary"
+        mat-mini-fab
+        (click)="editById(employee)">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+  </div>
+</mat-card>
+<div
+  *ngIf="loading$ | async"
+  class="backdrop">
+  <mat-spinner></mat-spinner>
+</div>

@@ -1,0 +1,22 @@
+<h2
+  class="title"
+  mat-dialog-title>
+  Підтвердження
+</h2>
+<mat-dialog-content>
+  Ви впевнені що хочете удалити цей пост
+</mat-dialog-content>
+<mat-dialog-actions class="actions">
+  <button
+    mat-raised-button
+    color="warn"
+    mat-dialog-close="false">
+    Відмінити!
+  </button>
+  <button
+    mat-raised-button
+    color="primary"
+    [mat-dialog-close]="true">
+    Удалити!
+  </button>
+</mat-dialog-actions>

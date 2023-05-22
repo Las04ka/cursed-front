@@ -1,0 +1,57 @@
+<div class="wrapper">
+  <mat-card class="card-inner">
+    <mat-card-header class="card-header">
+      <mat-card-title>Вхід</mat-card-title>
+      <div class="header-icons">
+        <button
+          mat-mini-fab
+          color="accent"
+          routerLink="">
+          <mat-icon>keyboard_backspace</mat-icon>
+        </button>
+        <mat-icon color="accent">lock</mat-icon>
+        <div style="width: 40px"></div>
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+      <form
+        class="login-form"
+        [formGroup]="form"
+        (ngSubmit)="onSubmit()">
+        <mat-form-field>
+          <input
+            matInput
+            type="email"
+            placeholder="Пошта"
+            formControlName="email" />
+          <mat-error *ngIf="email.touched && email.hasError('required')">
+            Поле обов'язкове
+          </mat-error>
+          <mat-error *ngIf="email.touched && email.hasError('email')">
+            Введіть справжню пошту
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            type="password"
+            placeholder="Пароль"
+            formControlName="password" />
+          <mat-error *ngIf="password.touched && password.hasError('required')">
+            Поле обов'язкове
+          </mat-error>
+        </mat-form-field>
+        <button
+          mat-raised-button
+          type="submit"
+          color="accent"
+          [disabled]="!form.valid">
+          Війти
+        </button>
+      </form>
+      <div class="links">
+        <a routerLink="/auth/register"> Реєстрація </a>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

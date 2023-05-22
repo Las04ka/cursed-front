@@ -1,0 +1,56 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+mat-card {
+  height: 100%;
+  width: 340px;
+  padding: 0 40px;
+  gap: 10px;
+
+  .title {
+    cursor: pointer;
+    font-family: Nunito, serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: #3f51b5;
+    height: 64px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .created {
+    color: #aaaaaa;
+    font-family: Nunito, serif;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .blog-image {
+    width: 100%;
+    height: 172px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  .read-more {
+    background-color: #3f51b5;
+    color: white;
+    font-weight: bold;
+    border-radius: 21px;
+  }
+}
+
+.add-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  .add-icon {
+    scale: 4;
+  }
+}

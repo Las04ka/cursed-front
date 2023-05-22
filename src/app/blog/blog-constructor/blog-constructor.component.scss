@@ -1,0 +1,15 @@
+:host{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-form{
+  display: flex;
+  flex-direction: column;
+}
+
+#image{
+  width: 100%;
+}

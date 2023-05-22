@@ -1,0 +1,98 @@
+<h2 mat-dialog-title>Співробітник</h2>
+<mat-dialog-content>
+  <form
+    [formGroup]="form"
+    class="main-form">
+    <div>
+      <mat-form-field>
+        <input
+          matInput
+          formControlName="firstName"
+          placeholder="Ім'я" />
+        <mat-error
+          *ngIf="
+            form.controls['firstName'].touched &&
+            form.controls['firstName'].hasError('required')
+          ">
+          Поле обов'язкове
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          formControlName="lastName"
+          placeholder="Прізвище" />
+        <mat-error
+          *ngIf="
+            form.controls['lastName'].touched &&
+            form.controls['lastName'].hasError('required')
+          ">
+          Поле обов'язкове
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input
+          matInput
+          formControlName="patronymic"
+          placeholder="По-батькові" />
+        <mat-error
+          *ngIf="
+            form.controls['patronymic'].touched &&
+            form.controls['patronymic'].hasError('required')
+          ">
+          Поле обов'язкове
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          formControlName="image"
+          placeholder="Посилання на фото" />
+        <mat-error
+          *ngIf="
+            form.controls['image'].touched &&
+            form.controls['image'].hasError('required')
+          ">
+          Поле обов'язкове
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <mat-form-field>
+      <textarea
+        matInput
+        formControlName="description"
+        placeholder="Опис"></textarea>
+      <mat-error
+        *ngIf="
+          form.controls['description'].touched &&
+          form.controls['description'].hasError('required')
+        ">
+        Поле обов'язкове
+      </mat-error>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button
+    mat-button
+    color="warn"
+    (click)="onCancel()">
+    Відмінити
+  </button>
+  <button
+    mat-button
+    color="primary"
+    (click)="onSubmit()"
+    [disabled]="form.invalid">
+    Підтвердити
+  </button>
+  <button
+    *ngIf="isEditing"
+    mat-mini-fab
+    color="primary"
+    (click)="onDelete()">
+    <mat-icon>delete</mat-icon>
+  </button>
+</mat-dialog-actions>

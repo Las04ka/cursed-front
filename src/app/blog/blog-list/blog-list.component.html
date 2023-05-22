@@ -1,0 +1,46 @@
+<div class="wrapper">
+  <mat-grid-list
+    class="product-list"
+    cols="3"
+    rowHeight="4:4"
+    gutterSize="1rem">
+    <mat-grid-tile
+      *ngIf="isAdmin"
+      [colspan]="1"
+      [rowspan]="1">
+      <mat-card
+        class="add-card"
+        (click)="addPost()">
+        <mat-icon
+          color="primary"
+          class="add-icon">
+          add_circle
+        </mat-icon>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile
+      *ngFor="let blog of blogs; index as i"
+      [colspan]="1"
+      [rowspan]="1">
+      <mat-card>
+        <img
+          src="{{ blog.image }}"
+          [routerLink]="['/blog', blog._id]"
+          class="blog-image"
+          alt="blog-image" />
+        <div class="created">{{ blog.author }} {{ blog.createdAt | date }}</div>
+        <div
+          class="title"
+          [routerLink]="['/blog', blog._id]">
+          {{ blog.title }}
+        </div>
+        <button
+          mat-raised-button
+          class="read-more"
+          [routerLink]="['/blog', blog._id]">
+          Read More
+        </button>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
